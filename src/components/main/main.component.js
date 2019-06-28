@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 
-// import './dashboard.scss';
+import './main.scss';
 // import logoBuckets from "../../assets/images/logoBuckets.svg";
 // import homeGreenIcon from "../../assets/images/home-green-icon.svg";
 // import fadedGreySearchIcon from "../../assets/images/search-faded-grey-icon.svg";
@@ -11,6 +11,8 @@ import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
+import MainNav from '../../components/main-nav/main-nav.component.js';
+
 
 
 
@@ -25,13 +27,17 @@ class Main extends Component {
     console.log(this.props);
 
     return (
-      <div id="main-page" className="container-fluid d-flex" >
+      <div id="main-page" className="container-fluid h-100" >
+        <MainNav></MainNav>
+        <div className="container">
+        
           <div className="row">
                 <div className="col-md-12">
                     <h1>home</h1>
                     {this.props.children}
                 </div>
            </div>
+        </div>
       </div>
 
       // end container

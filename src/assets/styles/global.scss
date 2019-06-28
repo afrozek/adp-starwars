@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
+@import 'variables';
+@import 'colors';
+@import 'fonts';
+@import 'helpers';
+
+
+
+html, body, #root {
+    height: 100%;
+}
