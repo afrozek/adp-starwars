@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1078px" height="483px" viewBox="0 0 1078 483" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>card-detail-overlay-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#4F4F4F" offset="0%"></stop>
+            <stop stop-color="#272727" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#4F4F4F" offset="0%"></stop>
+            <stop stop-color="#272727" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#4F4F4F" offset="0%"></stop>
+            <stop stop-color="#272727" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Character-Detail" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-82.000000, -278.000000)">
+            <g id="character-card-luke" transform="translate(82.000000, 278.000000)">
+                <g id="Oval" transform="translate(0.000000, 0.893417)">
+                    <g id="card-detail-overlay-bg" transform="translate(-163.000000, -15.893417)">
+                        <polygon id="Rectangle" fill="url(#linearGradient-1)" opacity="0.75" points="389.699049 15.8934169 548 15.8934169 328.300951 566.893417 170 566.893417"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-1)" points="320.699049 15.8934169 479 15.8934169 259.300951 566.893417 101 566.893417"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-1)" opacity="0.75" points="239.699049 15.8934169 398 15.8934169 178.300951 566.893417 20 566.893417"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-1)" opacity="0.75" points="1293.69905 -1.4428626e-29 1452 -1.4428626e-29 1232.30095 551 1074 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-1)" points="1224.69905 -1.4428626e-29 1383 -1.4428626e-29 1163.30095 551 1005 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-2)" opacity="0.796526228" points="1118.69905 0 1137 -1.4428626e-29 917.300951 551 899 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-3)" opacity="0.284853981" points="1090.69905 0 1093 0 873.300951 551 871 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-3)" opacity="0.1" points="1010.69905 0 1013 0 793.300951 551 791 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-3)" opacity="0.2" points="1021.69905 0 1024 0 804.300951 551 802 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-3)" opacity="0.1" points="219.699049 0 222 0 2.30095061 551 5.23747712e-14 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-3)" opacity="0.2" points="230.699049 0 233 0 13.3009506 551 11 551"></polygon>
+                        <polygon id="Rectangle" fill="url(#linearGradient-1)" opacity="0.75" points="1143.69905 -1.4428626e-29 1302 -1.4428626e-29 1082.30095 551 924 551"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

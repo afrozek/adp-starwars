@@ -30,13 +30,7 @@ class Main extends Component {
       <div id="main-page" className="container-fluid h-100" >
         <MainNav></MainNav>
         <div className="container">
-        
-          <div className="row">
-                <div className="col-md-12">
-                    <h1>home</h1>
-                    {this.props.children}
-                </div>
-           </div>
+        {this.props.children}
         </div>
       </div>
 

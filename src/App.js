@@ -5,6 +5,7 @@ import { connect, Provider } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import Main from './components/main/main.component';
+import CharactersPage from './components/characters/characters-page.component';
 
 import {
   HashRouter,
@@ -50,10 +51,10 @@ class Root extends Component {
                   <Route path="/about" component={About} />
                   <Route path="/contact" component={Contact} />
                   <Route path="/characters">
-                    <Characters>
+                    <CharactersPage>
                       <Route path="/characters" component={CharactersHome} />
                       <Route path="/characters/detail" component={CharactersDetail} />
-                    </Characters>
+                    </CharactersPage>
                   </Route>
             </Main>
           </Route>
