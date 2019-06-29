@@ -6,6 +6,7 @@ import fingerPrintIcon from "../../assets/images/finger-print-icon.svg";
 import arrowDownLongGreyIcon from "../../assets/images/arrow-down-long-grey-icon.svg";
 
 
+
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 
@@ -77,8 +78,9 @@ class CharactersHome extends Component {
           <div className="col-md-12 text-center">
             <img className="d-inline-block mb-3" src={fingerPrintIcon} alt="Finger Print"/>
             <h2 className="h4">Select a Character</h2>
-            <p>View your favorite Star Wars character info<br/>such as their traits, movies and more.</p>
-            <img className="d-inline-block mt-1" src={arrowDownLongGreyIcon} alt="Down Arrow"/>
+            <p className="sub-text">View your favorite Star Wars character info<br/>such as their traits, movies and more.</p>
+            
+            <img className="d-inline-block" src={arrowDownLongGreyIcon} alt="Down Arrow"/>
           </div>
         </div>
         {CharacterListView()}

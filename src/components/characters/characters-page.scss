@@ -1,24 +1,41 @@
+.sub-text {
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    color: #C6C6C6;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+a.cardAnchor {
+    transition: .3s;
+    display: block;
+}
+
+a.cardAnchor:hover {
+    text-decoration: none;
+    transform: scale(1.02);
+    display: block;
+    transition: .3s;
+}
 
 .card-container {
-    
     .card {
         background: url('/images/card-oval-mask.svg'), linear-gradient(180deg, #A65249 0%, #9B251B 100%);
         background-position: bottom right;
         // background-size: cover;
         background-repeat: no-repeat;
-        box-shadow: 0 2px 40px 0 rgba(0,0,0,0.50);
+        box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.50);
         border-radius: 8px;
         height: 340px;
         padding: 20px;
         display: block;
         border: none;
         position: relative;
-        
         .cardImg {
             position: absolute;
             right: -5px;
+            top: 5px;
         }
-
         .card-label {
             opacity: 0.75;
             font-family: Montserrat-Regular;
@@ -27,15 +44,37 @@
             letter-spacing: 1px;
             display: block;
         }
-
         .card-heading {
             font-family: Montserrat-Bold;
             font-size: 16px;
             color: #FFFFFF;
             letter-spacing: 0;
+            position: relative;
+            z-index: 99;
         }
-
-
     }
 }
 
+.select-btn {
+    background-image: linear-gradient(172deg, #000000 0%, #393939 100%);
+    box-shadow: 0 2px 20px 0 rgba(255, 99, 99, 0.5);
+    border-radius: 30px;
+    display: block;
+    position: relative;
+    top: 150px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+
+    img {
+        position: absolute;
+        right: 18px;
+        top: 18px;
+    }
+}
