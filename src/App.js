@@ -6,6 +6,8 @@ import { bindActionCreators } from "redux";
 
 import Main from './components/main/main.component';
 import CharactersPage from './components/characters/characters-page.component';
+import CharactersHome from './components/characters/characters-home.component';
+
 
 import {
   HashRouter,
@@ -30,9 +32,9 @@ class Characters extends React.Component {
   render() { return <div>Characters<div>{this.props.children}</div></div> }
 }
 
-class CharactersHome extends React.Component {
-  render() { return <div>Characters Home</div> }
-}
+// class CharactersHome extends React.Component {
+//   render() { return <div>Characters Home</div> }
+// }
 
 class CharactersDetail extends React.Component {
   render() { return <div>Characters Detail</div> }
@@ -52,8 +54,8 @@ class Root extends Component {
                   <Route path="/contact" component={Contact} />
                   <Route path="/characters">
                     <CharactersPage>
-                      <Route path="/characters" component={CharactersHome} />
-                      <Route path="/characters/detail" component={CharactersDetail} />
+                      <Route exact path="/characters/" component={CharactersHome} />
+                      <Route exact path="/characters/detail" component={CharactersDetail} />
                     </CharactersPage>
                   </Route>
             </Main>
