@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 // import './dashboard.scss';
-// import logoBuckets from "../../assets/images/logoBuckets.svg";
+import mainLogo from "../../assets/images/adp-starwars-logo.svg";
 // import homeGreenIcon from "../../assets/images/home-green-icon.svg";
 // import fadedGreySearchIcon from "../../assets/images/search-faded-grey-icon.svg";
 
@@ -16,9 +16,12 @@ class MainNav extends Component {
 
     return (
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav id="main-nav" className="navbar navbar-expand-lg">
           <a className="navbar-brand" href="#">
-            Navbar
+          <img
+                src={mainLogo}
+                alt="ADP StarWars"
+              />
           </a>
           <button
             className="navbar-toggler"
@@ -32,7 +35,7 @@ class MainNav extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <ul className="navbar-nav  ml-md-auto ">
               <li className="nav-item active">
                 <a className="nav-link" href="#">
                   Home <span className="sr-only">(current)</span>
