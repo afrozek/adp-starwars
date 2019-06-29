@@ -34,19 +34,23 @@ class CharactersHome extends Component {
             characters: [
                {
                  "name": "Luke Skywalker",
-                 "url": "https://swapi.co/api/people/1/"
+                 "url": "https://swapi.co/api/people/1/",
+                 "cardImgPath": "/images/luke-skywalker-card-render.svg"
                },
                {
                  "name": "Darth Vader",
-                 "url": "https://swapi.co/api/people/4/"
+                 "url": "https://swapi.co/api/people/4/",
+                 "cardImgPath": "/images/darth-vader-card-render.svg"
                },
                {
                  "name": "Obi-wan Kenobi",
-                 "url": "https://swapi.co/api/people/unknown/"
+                 "url": "https://swapi.co/api/people/unknown/",
+                 "cardImgPath": "/images/obi-wan-kenobi-card-render.svg"
                }, 
                {
                  "name": "R2-D2",
-                 "url": "https://swapi.co/api/people/3/"
+                 "url": "https://swapi.co/api/people/3/",
+                 "cardImgPath": "/images/r2-d2-card-render.svg"
                }
              ]
          })

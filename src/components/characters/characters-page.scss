@@ -1,0 +1,41 @@
+
+.card-container {
+    
+    .card {
+        background: url('/images/card-oval-mask.svg'), linear-gradient(180deg, #A65249 0%, #9B251B 100%);
+        background-position: bottom right;
+        // background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: 0 2px 40px 0 rgba(0,0,0,0.50);
+        border-radius: 8px;
+        height: 340px;
+        padding: 20px;
+        display: block;
+        border: none;
+        position: relative;
+        
+        .cardImg {
+            position: absolute;
+            right: -5px;
+        }
+
+        .card-label {
+            opacity: 0.75;
+            font-family: Montserrat-Regular;
+            font-size: 10px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .card-heading {
+            font-family: Montserrat-Bold;
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+        }
+
+
+    }
+}
+

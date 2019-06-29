@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="334px" viewBox="0 0 150 334" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>card-oval-mask</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.109561012">
+        <g id="Desktop" transform="translate(-457.000000, -316.000000)" fill="#D8D8D8">
+            <g id="character-card-darth" transform="translate(370.000000, 296.106583)">
+                <g id="Oval" transform="translate(0.000000, 14.893417)">
+                    <circle id="card-oval-mask" cx="328" cy="229" r="241"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
