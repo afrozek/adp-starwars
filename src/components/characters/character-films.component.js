@@ -22,6 +22,8 @@ import {
 import "./characters-page.scss";
 
 class CharacterFilms extends Component {
+
+    
   render() {
     console.log(this.props);
 

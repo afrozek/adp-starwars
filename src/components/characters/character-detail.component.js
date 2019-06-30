@@ -8,7 +8,16 @@ import userCircleWhiteIcon from "../../assets/images/user-circle-white-icon.svg"
 import arrowRightCircleIcon from "../../assets/images/arrow-right-circle-icon.svg";
 
 import { bindActionCreators } from "redux";
-import { withRouter } from 'react-router-dom';
+import {
+    HashRouter,
+    BrowserRouter,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    withRouter,
+    render
+  } from "react-router-dom";
 
 
 import axios from "axios";
@@ -18,6 +27,18 @@ import "./characters-page.scss";
 import Loader from '../loader/loader.component';
 import * as log from "loglevel";
 import CharacterFilms from './character-films.component';
+import CharacterFilmsHome from './character-films-home.component';
+
+class MovieDetail extends React.Component {
+
+    constructor(props) {
+        super(props);
+      }
+
+    render() {
+      return <div>{this.props.movie.name}</div>;
+    }
+  }
 
 
 class CharacterDetail extends Component {
@@ -28,6 +49,9 @@ class CharacterDetail extends Component {
       loadedDetail: false,
       characterDetail: null,
       movies: null,
+      movieSelected: (movie) => {
+          return movie;
+      },
       loadingText: "1 of 2: Loading Character Details",
       errorLoading: null,
       errorLoadingText: null
@@ -172,7 +196,11 @@ class CharacterDetail extends Component {
               </div>
               <div className="col-md-7">
                   {/* <CharacterFilms></CharacterFilms> */}
-                  {this.props.children}
+                  <CharacterFilms>
+                    <Route exact path="/characters/:id/detail/films"  render={props => <CharacterFilmsHome movies={this.state.movies} someProp={this.state.message} {...props} />}/>
+                    {/* <Route exact path="/characters/:id/detail/films/:name"  render={props => <MovieDetail movieDetail={this.state.movieDetail} someProp={this.state.message} {...props} />}/> */}
+
+                  </CharacterFilms>
                 
               </div>
             </div>

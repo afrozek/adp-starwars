@@ -18,6 +18,12 @@ import { Link, withRouter } from "react-router-dom";
 import "./characters-page.scss";
 
 class CharacterFilmsHome extends Component {
+
+    constructor(props) {
+        super(props);        
+        console.log("super props: ", props)
+      }
+    
   render() {
     console.log(this.props);
 
@@ -27,7 +33,11 @@ class CharacterFilmsHome extends Component {
           <img src={playCircleWhiteIcon} alt="Films" />
         </span>
         <h3 className="list-heading">Films</h3>
-        {/* {this.props.movies.map(movie => {
+        {/* <p>{JSON.stringify(this.props)}</p> */}
+        {/* <p>{this.props.movies}</p> */}
+        {/* <p>{this.state.movies}</p> */}
+
+        {this.props.movies.map(movie => {
           return (
             <li>
               <a href="">
@@ -36,7 +46,7 @@ class CharacterFilmsHome extends Component {
               </a>
             </li>
           );
-        })} */}
+        })}
       </ul>
     );
   }
