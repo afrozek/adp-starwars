@@ -71,10 +71,49 @@ a.cardAnchor:hover {
     letter-spacing: 5px;
     text-align: center;
     text-transform: uppercase;
-
     img {
         position: absolute;
         right: 18px;
         top: 18px;
+    }
+}
+
+.character-detail-card {
+    background: url('/images/card-detail-overlay-bg.svg'), linear-gradient(180deg, #A65249 0%, #9B251B 100%);
+    box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 500px;
+    margin-bottom: 50px;
+    padding: 30px 70px;
+}
+
+.character-detail-list {
+
+    list-style: none;
+
+    li {
+        margin: 15px 0px;
+    }
+
+    .item-heading {
+        opacity: 0.75;
+        font-family: Montserrat-Regular;
+        font-size: 10px;
+        color: #FFFFFF;
+        letter-spacing: 1px;
+        display: block;
+        text-transform: uppercase;
+    }
+    .item-content {
+        font-family: Montserrat-Bold;
+        font-size: 16px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        position: relative;
+        z-index: 99;
+        display: block;
     }
 }
