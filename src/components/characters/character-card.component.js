@@ -10,7 +10,14 @@ import arrowDownLongGreyIcon from "../../assets/images/arrow-down-long-grey-icon
 import arrowRightCircleIcon from "../../assets/images/arrow-right-circle-icon.svg";
 
 import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
+
+import {
+
+    Link,
+
+    withRouter
+  } from "react-router-dom";
+  
 
 import "./characters-page.scss";
 
@@ -20,7 +27,7 @@ class CharacterCard extends Component {
 
     return (
     <div className="col-md-3">
-        <a href="#" className="cardAnchor">
+        <Link to={`/characters/${this.props.character.id}/detail`} className="cardAnchor">
         <div className="card-container">
             <div className="card">
                 <img className="cardImg" src={this.props.character.cardImgPath} alt="Character"/>
@@ -36,7 +43,7 @@ class CharacterCard extends Component {
             </span>
             </div>
         </div>
-        </a>
+        </Link>
     </div> 
       // end container
     );
