@@ -36,7 +36,7 @@ class CharactersHome extends Component {
                {
                  "name": "Luke Skywalker",
                  "url": "https://swapi.co/api/people/1/",
-                 "cardImgPath": "/images/luke-skywalker-card-render.svg"
+                 "cardImgPath": "/images/luke-skywalker-card-render.svg",
                },
                {
                  "name": "Darth Vader",

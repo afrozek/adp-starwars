@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import fingerPrintIcon from "../../assets/images/finger-print-icon.svg";
 import arrowDownLongGreyIcon from "../../assets/images/arrow-down-long-grey-icon.svg";
 import userCircleWhiteIcon from "../../assets/images/user-circle-white-icon.svg";
+import arrowRightCircleIcon from "../../assets/images/arrow-right-circle-icon.svg";
+import playCircleWhiteIcon from "../../assets/images/play-circle-white-icon.svg";
 
 
 
@@ -115,7 +117,34 @@ class CharacterDetail extends Component {
                 </li>
               </ul>
             </div>
-            <div className="col-md-7">right</div>
+            <div className="col-md-7">
+                <ul class="film-list">
+                  <span>
+                      <img src={playCircleWhiteIcon} alt="Films"/>
+                  </span>
+                  <h3 class="list-heading">Films</h3>
+                    <li>
+                        <a href="">The Empire Strikes Back
+                            <img src={arrowRightCircleIcon} alt="" className=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">The Reveng of the Sith and the empire
+                            <img src={arrowRightCircleIcon} alt="" className=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">The Empire Strikes Back
+                            <img src={arrowRightCircleIcon} alt="" className=""/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">The Empire Strikes Back
+                            <img src={arrowRightCircleIcon} alt="" className=""/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
           </div>
         </div>
       </div>
