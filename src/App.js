@@ -47,9 +47,9 @@ class Root extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          {/* <Route exact path="/">
-            <Redirect to="/" />
-          </Route> */}
+          <Route exact path="/">
+            <Redirect to="/characters" />
+          </Route>
           <Route path="/">
             <Main>
                   <Route path="/about" component={About} />

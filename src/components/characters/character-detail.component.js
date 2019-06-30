@@ -16,7 +16,7 @@ import axios from "axios";
 
 import "./characters-page.scss";
 
-// import CharacterCardList from './character-card-list.component';
+import Loader from '../loader/loader.component';
 import * as log from "loglevel";
 
 class CharacterDetail extends Component {
@@ -27,6 +27,8 @@ class CharacterDetail extends Component {
       loadedDetail: false,
       characterDetail: null,
       movies: null,
+      errorLoading: null,
+      errorLoadingText: null
     };
   }
 
@@ -43,6 +45,9 @@ class CharacterDetail extends Component {
 
         fetchAllMovies();
 
+
+      }, err => {
+        this.setState({errorLoading: true, errorLoadingText: "There was an error fetching the character details"});
 
       });
       //   .catch(this.loginErrorHandler);
@@ -76,7 +81,9 @@ class CharacterDetail extends Component {
         },
         err => {
           log.error("error fetching all movie data err: ", err);
-          log.error("error fetching all movie data err.data: ", err.data);    
+          log.error("error fetching all movie data err.data: ", err.data);   
+          this.setState({errorLoading: true, errorLoadingText: "There was an error fetching movie data"});
+ 
         }
       );
     };
@@ -86,13 +93,13 @@ class CharacterDetail extends Component {
   render() {
     log.debug("characters: ", this.state.characters);
 
-    let Loader = () => {
-      return (
-        <div className="container d-flex justify-content-center align-items-center h-100">
-          <span>loading character detail</span>
-        </div>
-      );
-    };
+    // let Loader = () => {
+    //   return (
+    //     <div className="container d-flex justify-content-center align-items-center h-100">
+    //       <span>loading character detail</span>
+    //     </div>
+    //   );
+    // };
 
     let LoadedContent = () => {
       return (
@@ -185,7 +192,7 @@ class CharacterDetail extends Component {
     };
 
     let CharacterDetailView = () => {
-      if (this.state.loadedDetail == false) return Loader();
+      if (this.state.loadedDetail == false) return <Loader loadingText="Loading Character Details" error={this.state.errorLoading} errorLoadingText={this.state.errorLoadingText}/>;
       else return LoadedContent();
     };
 
