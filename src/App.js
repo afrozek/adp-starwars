@@ -9,6 +9,8 @@ import CharactersPage from './components/characters/characters-page.component';
 import CharactersHome from './components/characters/characters-home.component';
 import CharacterDetail from './components/characters/character-detail.component';
 import CharacterFilms from './components/characters/character-films.component';
+import CharacterFilmsHome from './components/characters/character-films-home.component';
+
 
 
 
@@ -20,7 +22,8 @@ import {
   Route,
   Link,
   Redirect,
-  withRouter
+  withRouter,
+  render,
 } from "react-router-dom";
 
 
@@ -32,9 +35,9 @@ class Contact extends React.Component {
   render() { return <div>afrozek95@gmail.com </div> }
 }
 
-class CharactersFilmsHome extends React.Component {
-  render() { return <div>Characters Films Home</div> }
-}
+// class CharactersFilmsHome extends React.Component {
+//   render() { return <div>Characters Films Home</div> }
+// }
 
 // class CharactersHome extends React.Component {
 //   render() { return <div>Characters Home</div> }
@@ -63,7 +66,11 @@ class Root extends Component {
                       <Route path="/characters/:id/">
                       <CharacterDetail >
                         <Route exact path="/characters/:id/detail"/>
-                        <Route exact path="/characters/:id/detail/films" component={CharactersFilmsHome}/>
+                        <Route exact path="/characters/:id/detail/films"  
+                        render={(routeProps, props) => (
+    <CharacterFilmsHome {...routeProps} {...props} />
+  )}
+                        />
                       </CharacterDetail>
                       
                       </Route>

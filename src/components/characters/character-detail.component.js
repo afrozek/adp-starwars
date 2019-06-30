@@ -6,7 +6,6 @@ import fingerPrintIcon from "../../assets/images/finger-print-icon.svg";
 import arrowDownLongGreyIcon from "../../assets/images/arrow-down-long-grey-icon.svg";
 import userCircleWhiteIcon from "../../assets/images/user-circle-white-icon.svg";
 import arrowRightCircleIcon from "../../assets/images/arrow-right-circle-icon.svg";
-import playCircleWhiteIcon from "../../assets/images/play-circle-white-icon.svg";
 
 import { bindActionCreators } from "redux";
 import { withRouter } from 'react-router-dom';
@@ -174,23 +173,7 @@ class CharacterDetail extends Component {
               <div className="col-md-7">
                   {/* <CharacterFilms></CharacterFilms> */}
                   {this.props.children}
-                {/* <ul className="film-list">
-                  <span>
-                    <img src={playCircleWhiteIcon} alt="Films" />
-                  </span>
-                  <h3 className="list-heading">Films</h3>
-                  {this.state.movies.map((movie) => {
-                    return (
-                        <li>
-                    <a href="">
-                      {movie.title}
-                      <img src={arrowRightCircleIcon} alt="" className="" />
-                    </a>
-                  </li>
-                    )
-                  })}
-                  
-                </ul> */}
+                
               </div>
             </div>
           </div>
