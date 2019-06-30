@@ -18,6 +18,8 @@ import "./characters-page.scss";
 
 import Loader from '../loader/loader.component';
 import * as log from "loglevel";
+import CharacterFilms from './character-films.component';
+
 
 class CharacterDetail extends Component {
   constructor(props) {
@@ -170,7 +172,9 @@ class CharacterDetail extends Component {
                 </ul>
               </div>
               <div className="col-md-7">
-                <ul className="film-list">
+                  {/* <CharacterFilms></CharacterFilms> */}
+                  {this.props.children}
+                {/* <ul className="film-list">
                   <span>
                     <img src={playCircleWhiteIcon} alt="Films" />
                   </span>
@@ -186,7 +190,7 @@ class CharacterDetail extends Component {
                     )
                   })}
                   
-                </ul>
+                </ul> */}
               </div>
             </div>
           </div>

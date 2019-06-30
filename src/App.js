@@ -8,6 +8,8 @@ import Main from './components/main/main.component';
 import CharactersPage from './components/characters/characters-page.component';
 import CharactersHome from './components/characters/characters-home.component';
 import CharacterDetail from './components/characters/character-detail.component';
+import CharacterFilms from './components/characters/character-films.component';
+
 
 
 
@@ -30,8 +32,8 @@ class Contact extends React.Component {
   render() { return <div>afrozek95@gmail.com </div> }
 }
 
-class Characters extends React.Component {
-  render() { return <div>Characters<div>{this.props.children}</div></div> }
+class CharactersFilmsHome extends React.Component {
+  render() { return <div>Characters Films Home</div> }
 }
 
 // class CharactersHome extends React.Component {
@@ -57,7 +59,16 @@ class Root extends Component {
                   <Route path="/characters">
                     <CharactersPage>
                       <Route exact path="/characters/" component={CharactersHome} />
-                      <Route exact path="/characters/:id/detail" component={CharacterDetail} />
+                      
+                      <Route path="/characters/:id/">
+                      <CharacterDetail >
+                        <Route exact path="/characters/:id/detail"/>
+                        <Route exact path="/characters/:id/detail/films" component={CharactersFilmsHome}/>
+                      </CharacterDetail>
+                      
+                      </Route>
+                      
+                        
                     </CharactersPage>
                   </Route>
             </Main>
