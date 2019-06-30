@@ -27,6 +27,7 @@ class CharacterDetail extends Component {
       loadedDetail: false,
       characterDetail: null,
       movies: null,
+      loadingText: "1 of 2: Loading Character Details",
       errorLoading: null,
       errorLoadingText: null
     };
@@ -39,10 +40,12 @@ class CharacterDetail extends Component {
         url: `https://swapi.co/api/people/${this.props.match.params.id}/`
       }).then(res => {
         log.debug("Character Detail Res.data: ", res.data);
+        
         this.setState({          
-          characterDetail: res.data
+          characterDetail: res.data,
+          loadingText: "2 of 2 Fetching All Movie Data"
         });
-
+        
         fetchAllMovies();
 
 
@@ -192,7 +195,7 @@ class CharacterDetail extends Component {
     };
 
     let CharacterDetailView = () => {
-      if (this.state.loadedDetail == false) return <Loader loadingText="Loading Character Details" error={this.state.errorLoading} errorLoadingText={this.state.errorLoadingText}/>;
+      if (this.state.loadedDetail == false) return <Loader loadingText={this.state.loadingText} error={this.state.errorLoading} errorLoadingText={this.state.errorLoadingText}/>;
       else return LoadedContent();
     };
 
