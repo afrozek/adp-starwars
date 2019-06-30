@@ -29,7 +29,7 @@ class Main extends Component {
     return (
       <div id="main-page" className="container-fluid h-100" >
         <MainNav></MainNav>
-        <div className="container">
+        <div className="container h-100">
         {this.props.children}
         </div>
       </div>

@@ -9,9 +9,10 @@ import arrowRightCircleIcon from "../../assets/images/arrow-right-circle-icon.sv
 import playCircleWhiteIcon from "../../assets/images/play-circle-white-icon.svg";
 
 import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
-import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
+
+import axios from "axios";
 
 import "./characters-page.scss";
 
@@ -23,37 +24,75 @@ class CharacterDetail extends Component {
     super(props);
 
     this.state = {
-      loadedDetail: false
+      loadedDetail: false,
+      characterDetail: null,
+      movies: null,
     };
   }
 
   componentDidMount() {
-
-    
-
     const fetchCharacterDetail = () => {
-    
-        axios({
-          method: 'get',
-          url: `https://swapi.co/api/people/${this.props.match.params.id}/`
-        })
-          .then(res => {
-              log.debug("Character Detail Res: ", res);
-            this.setState({ loadedDetail: true })
-          })
-        //   .catch(this.loginErrorHandler);
-      } // end fetchCharacterDetail
+      axios({
+        method: "get",
+        url: `https://swapi.co/api/people/${this.props.match.params.id}/`
+      }).then(res => {
+        log.debug("Character Detail Res.data: ", res.data);
+        this.setState({          
+          characterDetail: res.data
+        });
 
-      setTimeout(fetchCharacterDetail, 2000);
+        fetchAllMovies();
+
+
+      });
+      //   .catch(this.loginErrorHandler);
+    }; // end fetchCharacterDetail
+
+    setTimeout(fetchCharacterDetail, 2000);
+
+    const fetchAllMovies = () => {
+      const filmsUrlArray = this.state.characterDetail.films;
+      let filmsPromiseArray = [];
+
+      for (let filmUrl of filmsUrlArray) {
+        let requestConfig = axios({ method: "get", url: filmUrl });
+        filmsPromiseArray.push(requestConfig);
+      }
+
+      Promise.all(filmsPromiseArray).then(
+        (resArray) => {
+          log.debug("Fetched all movie data res: ", resArray);
+
+          let movies = []
+            
+          for(let res of resArray) {
+            movies.push(res.data);
+          }
+
+          this.setState({loadedDetail: true, movies});
+
+          log.debug("state.movies: ", this.state.movies);
+          
+        },
+        err => {
+          log.error("error fetching all movie data err: ", err);
+          log.error("error fetching all movie data err.data: ", err.data);    
+        }
+      );
+    };
 
   } // end componentDidMount
-
-
 
   render() {
     log.debug("characters: ", this.state.characters);
 
-    let Loader = <div>loading character detail</div>;
+    let Loader = () => {
+      return (
+        <div className="container d-flex justify-content-center align-items-center h-100">
+          <span>loading character detail</span>
+        </div>
+      );
+    };
 
     let LoadedContent = () => {
       return (
@@ -65,79 +104,78 @@ class CharacterDetail extends Component {
                 src={fingerPrintIcon}
                 alt="Finger Print"
               />
-              <h2 className="h4">
-                Luke Skywalker {this.props.match.params.id}
-              </h2>
+              <h2 className="h4">{this.state.characterDetail.name}</h2>
               <p className="sub-text">Character Selected.</p>
             </div>
           </div>
           <div className="character-detail-card">
             <div className="row">
               <div className="col-md-5">
-                <ul class="character-detail-list">
+                <ul className="character-detail-list">
                   <span>
                     <img src={userCircleWhiteIcon} alt="Character" />
                   </span>
                   <li>
                     <span className="item-heading">Name</span>
-                    <span className="item-content">Luke Skywalker</span>
+                    <span className="item-content">
+                      {this.state.characterDetail.name}
+                    </span>
                   </li>
                   <li>
                     <span className="item-heading">Height</span>
-                    <span className="item-content">172 cm</span>
+                    <span className="item-content">
+                      {this.state.characterDetail.height}
+                    </span>
                   </li>
                   <li>
                     <span className="item-heading">Mass</span>
-                    <span className="item-content">132 kg</span>
+                    <span className="item-content">
+                      {this.state.characterDetail.mass}
+                    </span>
                   </li>
                   <li>
                     <span className="item-heading">Hair Color</span>
-                    <span className="item-content">Blonde</span>
+                    <span className="item-content">
+                      {this.state.characterDetail.hair_color}
+                    </span>
                   </li>
                   <li>
                     <span className="item-heading">Skin Color</span>
-                    <span className="item-content">Fair</span>
+                    <span className="item-content">
+                      {this.state.characterDetail.skin_color}
+                    </span>
                   </li>
                   <li>
                     <span className="item-heading">Birth Year</span>
-                    <span className="item-content">1999 yb</span>
+                    <span className="item-content">
+                      {this.state.characterDetail.birth_year}
+                    </span>
                   </li>
                   <li>
                     <span className="item-heading">Gender</span>
-                    <span className="item-content">Male</span>
+                    <span className="item-content">
+                      {this.state.characterDetail.gender}
+                    </span>
                   </li>
                 </ul>
               </div>
               <div className="col-md-7">
-                <ul class="film-list">
+                <ul className="film-list">
                   <span>
                     <img src={playCircleWhiteIcon} alt="Films" />
                   </span>
-                  <h3 class="list-heading">Films</h3>
-                  <li>
+                  <h3 className="list-heading">Films</h3>
+                  {this.state.movies.map((movie) => {
+                    return (
+                        <li>
                     <a href="">
-                      The Empire Strikes Back
+                      {movie.title}
                       <img src={arrowRightCircleIcon} alt="" className="" />
                     </a>
                   </li>
-                  <li>
-                    <a href="">
-                      The Reveng of the Sith and the empire
-                      <img src={arrowRightCircleIcon} alt="" className="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      The Empire Strikes Back
-                      <img src={arrowRightCircleIcon} alt="" className="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      The Empire Strikes Back
-                      <img src={arrowRightCircleIcon} alt="" className="" />
-                    </a>
-                  </li>
+                    )
+                  })}
+                  
                 </ul>
               </div>
             </div>
@@ -147,12 +185,12 @@ class CharacterDetail extends Component {
     };
 
     let CharacterDetailView = () => {
-      if (this.state.loadedDetail == false) return Loader;
+      if (this.state.loadedDetail == false) return Loader();
       else return LoadedContent();
     };
 
     return (
-      <div>{CharacterDetailView()}</div>
+      <div className="h-100">{CharacterDetailView()}</div>
       // end container
     );
   }

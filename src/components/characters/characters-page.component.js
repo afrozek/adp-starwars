@@ -18,7 +18,7 @@ class CharactersPage extends Component {
     console.log(this.props);
 
     return (
-      <div>            
+      <div className="h-100">            
             {this.props.children}
       </div>
 
