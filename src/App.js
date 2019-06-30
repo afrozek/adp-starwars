@@ -7,6 +7,8 @@ import { bindActionCreators } from "redux";
 import Main from './components/main/main.component';
 import CharactersPage from './components/characters/characters-page.component';
 import CharactersHome from './components/characters/characters-home.component';
+import CharacterDetail from './components/characters/character-detail.component';
+
 
 
 import {
@@ -36,9 +38,9 @@ class Characters extends React.Component {
 //   render() { return <div>Characters Home</div> }
 // }
 
-class CharactersDetail extends React.Component {
-  render() { return <div>Characters Detail</div> }
-}
+// class CharactersDetail extends React.Component {
+//   render() { return <div>Characters Detail</div> }
+// }
 
 class Root extends Component {
   render() {
@@ -55,7 +57,7 @@ class Root extends Component {
                   <Route path="/characters">
                     <CharactersPage>
                       <Route exact path="/characters/" component={CharactersHome} />
-                      <Route exact path="/characters/detail" component={CharactersDetail} />
+                      <Route exact path="/characters/:id/detail" component={CharacterDetail} />
                     </CharactersPage>
                   </Route>
             </Main>
