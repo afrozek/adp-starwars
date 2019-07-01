@@ -22,10 +22,20 @@ class CharacterFilmsHome extends Component {
     constructor(props) {
         super(props);        
         console.log("super props: ", props)
+
+        this.movieSelectedHandler = this.movieSelectedHandler.bind(this);
+
+
       }
-    
+      
+      movieSelectedHandler(movie) {
+        // alert("clicked");
+        console.log("clicked, :", movie.title);
+        this.props.movieSelectedCallback(movie);
+
+      }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
 
     return (
       <ul className="film-list">
@@ -33,16 +43,17 @@ class CharacterFilmsHome extends Component {
           <img src={playCircleWhiteIcon} alt="Films" />
         </span>
         <h3 className="list-heading">Films</h3>
+        <div>{this.props.movieDetail.title}</div>
         {/* <p>{JSON.stringify(this.props)}</p> */}
         {/* <p>{this.props.movies}</p> */}
         {/* <p>{this.state.movies}</p> */}
 
         {this.props.movies.map(movie => {
           return (
-            <li>
-              <a href="">
+            <li key={movie.title}>
+              <a onClick={()=>this.movieSelectedHandler(movie)}>
                 {movie.title}
-                <img src={arrowRightCircleIcon} alt="" className="" />
+                <img src={arrowRightCircleIcon} alt="" className=""  />
               </a>
             </li>
           );

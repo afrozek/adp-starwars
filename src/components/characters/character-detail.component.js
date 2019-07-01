@@ -36,7 +36,7 @@ class MovieDetail extends React.Component {
       }
 
     render() {
-      return <div>{this.props.movie.name}</div>;
+      return <div>{this.props.movieDetail.title}</div>;
     }
   }
 
@@ -49,9 +49,15 @@ class CharacterDetail extends Component {
       loadedDetail: false,
       characterDetail: null,
       movies: null,
-      movieSelected: (movie) => {
-          return movie;
+      selectedMovie: {title: "sample movie"},
+      movieSelectedCallback: (movie) => {
+          console.log(movie)
+        this.setState({selectedMovie: movie})
+        console.log(this.state.selectedMovie.title)
       },
+    //   movieSelected: (movie) => {
+    //       return movie;
+    //   },
       loadingText: "1 of 2: Loading Character Details",
       errorLoading: null,
       errorLoadingText: null
@@ -195,10 +201,11 @@ class CharacterDetail extends Component {
                 </ul>
               </div>
               <div className="col-md-7">
+                  <h3>{this.state.selectedMovie.title}</h3>
                   {/* <CharacterFilms></CharacterFilms> */}
                   <CharacterFilms>
-                    <Route exact path="/characters/:id/detail/films"  render={props => <CharacterFilmsHome movies={this.state.movies} someProp={this.state.message} {...props} />}/>
-                    {/* <Route exact path="/characters/:id/detail/films/:name"  render={props => <MovieDetail movieDetail={this.state.movieDetail} someProp={this.state.message} {...props} />}/> */}
+                    <Route exact path="/characters/:id/detail/films"  render={props => <CharacterFilmsHome movieSelectedCallback={this.state.movieSelectedCallback} movies={this.state.movies} movieDetail={this.state.selectedMovie} someProp={this.state.message} {...props} />}/>
+                    <Route exact path="/characters/:id/detail/films/:name"  render={props => <MovieDetail movieSelectedCallback={this.state.movieSelectedCallback} movieDetail={this.state.selectedMovie} someProp={this.state.message} {...props} />}/>
 
                   </CharacterFilms>
                 

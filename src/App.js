@@ -65,7 +65,7 @@ class Root extends Component {
                   <Route path="/characters/:id/">
                     <CharacterDetail>
                       <Route exact path="/characters/:id/detail" />
-                      
+                      <Route exact path="/characters/:id/detail/films" />
                     </CharacterDetail>
                   </Route>
                 </CharactersPage>
