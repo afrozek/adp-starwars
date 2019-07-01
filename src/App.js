@@ -56,8 +56,8 @@ class Root extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/characters">
                 <CharactersPage>
-                  <Route exact path="/characters/" component={CharactersHome} />
-                  <Route path="/characters/:id/" component={CharacterDetail}/>                    
+                  <Route exact path="/characters" component={CharactersHome} />
+                  <Route  path="/characters/:id/detail" component={CharacterDetail}/>                    
                 </CharactersPage>
               </Route>
             </Main>
