@@ -167,3 +167,25 @@ a.cardAnchor:hover {
         
     }
 }
+
+.back-btn {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.36);
+    border-radius: 16px;
+    padding: 8px 20px;
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    transition: .3s;
+    margin-top: 10px;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        background: rgba(0, 0, 0, 0.7);
+
+    }
+
+}

@@ -29,12 +29,12 @@ class MainNav extends Component {
     return (
       <div className="container">
         <nav id="main-nav" className="navbar navbar-expand-lg">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
           <img
                 src={mainLogo}
                 alt="ADP StarWars"
               />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"

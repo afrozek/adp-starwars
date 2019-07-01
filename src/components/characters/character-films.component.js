@@ -13,6 +13,8 @@ import playCircleWhiteIcon from "../../assets/images/play-circle-white-icon.svg"
 import { bindActionCreators } from "redux";
 
 import { Link, withRouter } from "react-router-dom";
+import moment from 'moment'
+
 
 import "./characters-page.scss";
 import * as log from "loglevel";
@@ -45,7 +47,6 @@ class CharacterFilms extends Component {
              {this.state.selectedMovie.title} 
              </h3>
             <div>
-            <span onClick={()=> this.setState({selectedMovie: null})}>Back to Films List</span>
 
             </div>
             <ul>
@@ -62,9 +63,11 @@ class CharacterFilms extends Component {
                     Producer: {this.state.selectedMovie.producer}
                 </li>
                 <li>
-                    Release Date: {this.state.selectedMovie.release_date}
+                    Release Date: {moment(this.state.selectedMovie.release_date).format("dddd, MMMM D YYYY")}
                 </li>
             </ul>
+            <span className="back-btn " onClick={()=> this.setState({selectedMovie: null})}>Back to Films List</span>
+
         </div>
       );
     };
