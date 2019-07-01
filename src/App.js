@@ -9,7 +9,6 @@ import CharactersPage from "./components/characters/characters-page.component";
 import CharactersHome from "./components/characters/characters-home.component";
 import CharacterDetail from "./components/characters/character-detail.component";
 import CharacterFilms from "./components/characters/character-films.component";
-import CharacterFilmsHome from "./components/characters/character-films-home.component";
 
 import {
   HashRouter,
@@ -61,13 +60,7 @@ class Root extends Component {
               <Route path="/characters">
                 <CharactersPage>
                   <Route exact path="/characters/" component={CharactersHome} />
-
-                  <Route path="/characters/:id/">
-                    <CharacterDetail>
-                      <Route exact path="/characters/:id/detail" />
-                      <Route exact path="/characters/:id/detail/films" />
-                    </CharacterDetail>
-                  </Route>
+                  <Route path="/characters/:id/" component={CharacterDetail}/>                    
                 </CharactersPage>
               </Route>
             </Main>

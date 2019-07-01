@@ -27,7 +27,6 @@ import "./characters-page.scss";
 import Loader from '../loader/loader.component';
 import * as log from "loglevel";
 import CharacterFilms from './character-films.component';
-import CharacterFilmsHome from './character-films-home.component';
 
 class MovieDetail extends React.Component {
 
@@ -201,13 +200,11 @@ class CharacterDetail extends Component {
                 </ul>
               </div>
               <div className="col-md-7">
-                  <h3>{this.state.selectedMovie.title}</h3>
-                  {/* <CharacterFilms></CharacterFilms> */}
-                  <CharacterFilms>
-                    <Route exact path="/characters/:id/detail/films"  render={props => <CharacterFilmsHome movieSelectedCallback={this.state.movieSelectedCallback} movies={this.state.movies} movieDetail={this.state.selectedMovie} someProp={this.state.message} {...props} />}/>
-                    <Route exact path="/characters/:id/detail/films/:name"  render={props => <MovieDetail movieSelectedCallback={this.state.movieSelectedCallback} movieDetail={this.state.selectedMovie} someProp={this.state.message} {...props} />}/>
+                  {/* <h3>{this.state.selectedMovie.title}</h3> */}
+                  <CharacterFilms movies={this.state.movies} />
+                   
 
-                  </CharacterFilms>
+
                 
               </div>
             </div>
