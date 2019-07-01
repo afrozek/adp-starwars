@@ -5,6 +5,7 @@ import { connect, Provider } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import Main from "./components/main/main.component";
+import About from "./components/about.component";
 import CharactersPage from "./components/characters/characters-page.component";
 import CharactersHome from "./components/characters/characters-home.component";
 import CharacterDetail from "./components/characters/character-detail.component";
@@ -21,11 +22,7 @@ import {
   render
 } from "react-router-dom";
 
-class About extends React.Component {
-  render() {
-    return <div> ADP Project </div>;
-  }
-}
+
 
 class Contact extends React.Component {
   render() {

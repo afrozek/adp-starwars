@@ -40,7 +40,32 @@ class CharacterFilms extends Component {
 
     const movieDetailView = () => {
       return (
-        <div>movie detail view for: {this.state.selectedMovie.title} </div>
+        <div>
+             <h3>
+             {this.state.selectedMovie.title} 
+             </h3>
+            <div>
+            <span onClick={()=> this.setState({selectedMovie: null})}>Back to Films List</span>
+
+            </div>
+            <ul>
+                <li>
+                    Title: {this.state.selectedMovie.title}
+                </li>
+                {/* <li>
+                    Sypnosis: {this.state.selectedMovie.opening_crawl}
+                </li> */}
+                <li>
+                    Director: {this.state.selectedMovie.director}
+                </li>
+                <li>
+                    Producer: {this.state.selectedMovie.producer}
+                </li>
+                <li>
+                    Release Date: {this.state.selectedMovie.release_date}
+                </li>
+            </ul>
+        </div>
       );
     };
 

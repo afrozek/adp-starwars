@@ -8,7 +8,16 @@ import mainLogo from "../../assets/images/adp-starwars-logo.svg";
 // import fadedGreySearchIcon from "../../assets/images/search-faded-grey-icon.svg";
 
 import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
+
+import {
+    HashRouter,
+    BrowserRouter,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    withRouter,
+  } from "react-router-dom";
 
 import './main-nav.scss';
 
@@ -40,25 +49,25 @@ class MainNav extends Component {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav  ml-md-auto ">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <Link to="/" className="nav-link" href="#">
                   Home <span className="sr-only">(current)</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Search
+                <a className="nav-link"  target="_blank" rel="noopener noreferrer" href="https://github.com/afrozek/adp-starwars">
+                  Github
                 </a>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="#">
                   Contact
                 </a>
-              </li>
+              </li> */}
 
             </ul>
           </div>
