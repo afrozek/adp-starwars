@@ -6,10 +6,18 @@ import fingerPrintIcon from "../../assets/images/finger-print-icon.svg";
 import arrowDownLongGreyIcon from "../../assets/images/arrow-down-long-grey-icon.svg";
 import userCircleWhiteIcon from "../../assets/images/user-circle-white-icon.svg";
 import arrowRightCircleIcon from "../../assets/images/arrow-right-circle-icon.svg";
-import playCircleWhiteIcon from "../../assets/images/play-circle-white-icon.svg";
 
 import { bindActionCreators } from "redux";
-import { withRouter } from 'react-router-dom';
+import {
+    HashRouter,
+    BrowserRouter,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    withRouter,
+    render
+  } from "react-router-dom";
 
 
 import axios from "axios";
@@ -20,6 +28,17 @@ import Loader from '../loader/loader.component';
 import * as log from "loglevel";
 import CharacterFilms from './character-films.component';
 
+class MovieDetail extends React.Component {
+
+    constructor(props) {
+        super(props);
+      }
+
+    render() {
+      return <div>{this.props.movieDetail.title}</div>;
+    }
+  }
+
 
 class CharacterDetail extends Component {
   constructor(props) {
@@ -29,6 +48,15 @@ class CharacterDetail extends Component {
       loadedDetail: false,
       characterDetail: null,
       movies: null,
+      selectedMovie: {title: "sample movie"},
+      movieSelectedCallback: (movie) => {
+          console.log(movie)
+        this.setState({selectedMovie: movie})
+        console.log(this.state.selectedMovie.title)
+      },
+    //   movieSelected: (movie) => {
+    //       return movie;
+    //   },
       loadingText: "1 of 2: Loading Character Details",
       errorLoading: null,
       errorLoadingText: null
@@ -172,25 +200,12 @@ class CharacterDetail extends Component {
                 </ul>
               </div>
               <div className="col-md-7">
-                  {/* <CharacterFilms></CharacterFilms> */}
-                  {this.props.children}
-                {/* <ul className="film-list">
-                  <span>
-                    <img src={playCircleWhiteIcon} alt="Films" />
-                  </span>
-                  <h3 className="list-heading">Films</h3>
-                  {this.state.movies.map((movie) => {
-                    return (
-                        <li>
-                    <a href="">
-                      {movie.title}
-                      <img src={arrowRightCircleIcon} alt="" className="" />
-                    </a>
-                  </li>
-                    )
-                  })}
-                  
-                </ul> */}
+                  {/* <h3>{this.state.selectedMovie.title}</h3> */}
+                  <CharacterFilms movies={this.state.movies} />
+                   
+
+
+                
               </div>
             </div>
           </div>
